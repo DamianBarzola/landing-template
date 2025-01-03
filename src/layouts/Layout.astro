@@ -1,4 +1,5 @@
 ---
+import BottomShadow from "../components/BottomShadow.astro";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 ---
@@ -16,12 +17,13 @@ import Nav from "../components/Nav.astro";
     class="overflow-x-hidden selection:bg-primary selection:text-secondary [&_:focus-visible]:outline-none [&_:focus-visible]:ring-2 [&_:focus-visible]:ring-primary"
   >
     <main
-      class="mx-auto min-h-screen max-w-6xl px-2 selection:bg-primary selection:text-secondary lg:px-10"
+      class="mx-auto min-h-screen selection:bg-primary selection:text-secondary"
       id="main-content"
     >
       <Nav />
       <slot />
       <Footer />
+      <BottomShadow />
     </main>
   </body>
 </html>
@@ -34,5 +36,17 @@ import Nav from "../components/Nav.astro";
     background-color: black;
     color: white;
     height: 100%;
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
   }
 </style>

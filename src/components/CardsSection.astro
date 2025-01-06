@@ -1,11 +1,53 @@
 ---
-
+const CARDS = [
+  {
+    title: "Card 1",
+    description: "This is card 1",
+  },
+  {
+    title: "Card 2",
+    description: "This is card 2",
+  },
+  {
+    title: "Card 3",
+    description: "This is card 3",
+  },
+  {
+    title: "Card 4",
+    description: "This is card 4",
+  },
+];
 ---
 
 <div class="border-4 min-h-screen flex">
-  <div
-    class="backdrop-blur-[8px] backdrop-saturate-[90%] bg-[#a6a6a6] bg-opacity-10border border-opacity-20 border-[#a6a6a6]"
-  >
+  <div class="mx-4 my-8 md:m-[10%] w-full">
+    <div class="text-center">
+      <h1 class="text-5xl">Cards Sections</h1>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-20">
+      {
+        CARDS.map((info) => (
+          <div class="card mx-2 h-56 p-4 rounded-2xl backdrop-blur-[8px] backdrop-saturate-[90%] bg-opacity-10border border-opacity-20">
+            <div class="card-header">
+              <div class="h-16 w-16 rounded-2xl icon" />
+              <h1 class="text-3xl mb-2 font-medium">{info.title}</h1>
+            </div>
+            <div class="card-body text-lg opacity-70">
+              <p>{info.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </div>
-<style></style>
+<style>
+  .card {
+    background-color: #161616ba;
+    border: #272727 1px solid;
+  }
+  .card .icon {
+    background-color: #202020ba;
+    border: #272727 1px solid;
+  }
+</style>

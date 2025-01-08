@@ -1,0 +1,70 @@
+---
+import logo from "../assets/js.svg";
+import logo2 from "../assets/astro.svg";
+
+const MARQUEE_ITEMS = [
+  { src: logo.src, alt: "Logo 1" },
+  { src: logo2.src, alt: "Logo 2" },
+  { src: logo.src, alt: "Logo 3" },
+  { src: logo2.src, alt: "Logo 4" },
+  { src: logo.src, alt: "Logo 4" },
+  { src: logo2.src, alt: "Logo 4" },
+];
+---
+
+<section class="py-5 flex justify-center items-center">
+  <div class="scroll-container">
+    <div class="scroll-content">
+      {MARQUEE_ITEMS.map((item) => <img src={item.src} alt={item.alt} />)}
+      {MARQUEE_ITEMS.map((item) => <img src={item.src} alt={item.alt} />)}
+    </div>
+  </div>
+</section>
+<style>
+  .scroll-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #fff 20%,
+      #fff 80%,
+      transparent
+    );
+  }
+
+  .scroll-content {
+    display: flex;
+    animation: scroll-infinite 20s linear infinite;
+    will-change: transform;
+  }
+
+  .scroll-content img {
+    height: 100px;
+    margin-right: 100px;
+  }
+
+  @keyframes scroll-infinite {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+<!-- <script >
+  const scrollContent = document.querySelector(".scroll-content");
+
+  // Duplicar el contenido dinámicamente para asegurar continuidad
+  const duplicateContent = scrollContent.innerHTML;
+  scrollContent.innerHTML += duplicateContent;
+
+  // Ajustar la duración de la animación según el ancho del contenido
+  const contentWidth = scrollContent.offsetWidth;
+  scrollContent.style.animationDuration = `${contentWidth / 100}px`;
+</script> -->

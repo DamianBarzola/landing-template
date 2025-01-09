@@ -1,0 +1,48 @@
+---
+import Question from "./Question";
+const QUESTIONS = [
+  {
+    question: "Some question here",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus earum ab minima nostrum temporibus tempore excepturi? Ducimus, dicta doloremque ab veniam repellat officiis, a tenetur ut, suscipit ex accusamus dolores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae deleniti sit iure esse dolorem eaque non facilis culpa          velit cupiditate aut unde perspiciatis similique quia temporibus,          nostrum ipsa minima consequatur.",
+  },
+  {
+    question: "Another question here",
+    answer:
+      "lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum repellendus vero!",
+  },
+  {
+    question: "Another question here",
+    answer:
+      "lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum repellendus vero!",
+  },
+  {
+    question: "Last question here",
+    answer: "Ashe",
+  },
+];
+---
+
+<div class="min-h-screen w-full flex align-middle content-center">
+  <div class="mx-6 my-8 md:m-[10%] w-full">
+    <div>
+      <h1 class="text-7xl mb-2 tracking-wider font-semibold">FAQ</h1>
+      <span class="text-lg opacity-75">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat
+        nostrum repellendus vero!
+      </span>
+    </div>
+    <div class="w-full mt-12">
+      {
+        QUESTIONS.map((question) => (
+          <Question
+            client:idle
+            question={question.question}
+            answer={question.answer}
+          />
+        ))
+      }
+    </div>
+  </div>
+</div>
+<style></style>

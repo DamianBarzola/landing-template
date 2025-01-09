@@ -1,6 +1,64 @@
 ---
-
+import logo from "../assets/astro.svg";
 ---
 
-<footer></footer>
-<style></style>
+<footer class="relative">
+  <div class="mx-6 md:mx-[10%]">
+    <div class="flex align-middle justify-between pt-6 pb-12">
+      <div class="w-full md:w-1/2">
+        <img src={logo.src} alt="" width={"150px"} />
+      </div>
+
+      <div class="w-full md:w-1/2 flex justify-between">
+        <div id="footer-col">
+          <h1 class="text-xl font-semibold">Resources</h1>
+          <div class="flex flex-col gap-2">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Pricing</a>
+            <a href="">Contact</a>
+          </div>
+        </div>
+        <div id="footer-col">
+          <h1 class="text-xl font-semibold">Socials</h1>
+          <div class="flex flex-col gap-2">
+            <a href="">Facebook</a>
+            <a href="">Instagram</a>
+            <a href="">X</a>
+            <a href="">Github?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright w-full z-30">
+    <div class="flex align-middle justify-between mx-6 md:mx-[10%]">
+      <span>
+        Made by {""}<a href="https://github.com/DamianBarzola" target="_blank"
+          ><i>Damian</i></a
+        ></span
+      >
+      <span>© 2025. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+<style>
+  footer {
+    border-top: #1d1d1d 1px solid;
+  }
+  .copyright {
+    background-color: rgb(10, 10, 10);
+    color: #9b9b9b;
+    position: absolute;
+    bottom: 0;
+  }
+  #footer-col div {
+    color: #9b9b9b;
+  }
+  #footer-col div a {
+    transition: 0.3s ease-in-out all;
+  }
+  #footer-col div a:hover {
+    color: white;
+  }
+</style>

@@ -4,14 +4,20 @@ import logo from "../assets/astro.svg";
 
 <footer class="relative">
   <div class="mx-6 md:mx-[10%]">
-    <div class="flex align-middle justify-between pt-6 pb-12">
-      <div class="w-full md:w-1/2">
+    <div
+      class="flex align-middle justify-between md:flex-row flex-col pt-6 pb-12 gap-5"
+    >
+      <div
+        class="w-full md:w-1/2 flex md:block md:justify-start justify-center"
+      >
         <img src={logo.src} alt="" width={"150px"} />
       </div>
 
-      <div class="w-full md:w-1/2 flex justify-between">
-        <div id="footer-col">
-          <h1 class="text-xl font-semibold">Resources</h1>
+      <div
+        class="w-full md:w-1/2 flex justify-around md:flex-row flex-col gap-5"
+      >
+        <div id="footer-col" class="px-4 mb-4 md:mb-0 md:px-0">
+          <h1 class="text-xl font-semibold mb-1">Resources</h1>
           <div class="flex flex-col gap-2">
             <a href="">Home</a>
             <a href="">About</a>
@@ -19,8 +25,8 @@ import logo from "../assets/astro.svg";
             <a href="">Contact</a>
           </div>
         </div>
-        <div id="footer-col">
-          <h1 class="text-xl font-semibold">Socials</h1>
+        <div id="footer-col" class="px-4 mb-4 md:mb-0 md:px-0">
+          <h1 class="text-xl font-semibold mb-1">Socials</h1>
           <div class="flex flex-col gap-2">
             <a href="">Facebook</a>
             <a href="">Instagram</a>
@@ -57,6 +63,7 @@ import logo from "../assets/astro.svg";
   }
   #footer-col div a {
     transition: 0.3s ease-in-out all;
+    font-size: 18px;
   }
   #footer-col div a:hover {
     color: white;

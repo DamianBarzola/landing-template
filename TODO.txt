@@ -1,4 +1,0 @@
-- testimonials 
-- prices
-- carrousel?
-- stats?

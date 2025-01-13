@@ -1,0 +1,43 @@
+---
+import Carrousel from "./Carrousel";
+const TESTIMONIALS = [
+  {
+    name: "John Bue",
+    company: "Gagle",
+    testimonial:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat nostrum repellendus vero! ",
+  },
+  {
+    name: "John Bue",
+    company: "Gagle",
+    testimonial:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat nostrum repellendus vero! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat nostrum repellendus vero! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat nostrum repellendus vero!",
+  },
+  {
+    name: "John Bue",
+    company: "Gagle",
+    testimonial:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat nostrum repellendus vero!",
+  },
+];
+---
+
+<section
+  class="min-h-screen w-full flex align-middle content-center border-zinc-200"
+>
+  <div
+    class="mx-6 my-8 md:m-[10%] w-full flex flex-col-reverse md:flex-row gap-8"
+  >
+    <div class="w-full md:w-3/5">
+      <Carrousel client:idle data={TESTIMONIALS} />
+    </div>
+    <div class="w-full md:w-2/5 flex flex-col justify-center">
+      <h1 class="text-6xl font-bold">Testimonials</h1>
+      <span class="text-lg opacity-75">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat
+        nostrum repellendus vero!
+      </span>
+    </div>
+  </div>
+</section>
+<style></style>

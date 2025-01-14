@@ -11,11 +11,11 @@ const Carrousel = ({ data }) => {
     <div className="card-container w-full">
       <div
         class="flex transition-transform duration-300 ease-in-out px-10"
-        style={{ transform: `translateX(-${position * 67}%)` }}
+        style={{ transform: `translateX(-${position * 74}%)` }}
         id="carrousel"
       >
         {data.map((item) => (
-          <div class="min-w-[80%] bg-[#0c0c0c] text-white p-6 h-[22rem] mx-2 rounded-lg">
+          <div class="min-w-[85%] bg-[#0c0c0c] text-white p-6 h-[22rem] mx-2 rounded-lg">
             <div className="h-4/5 overflow-auto mb-2">
               <span className="text-xl">"{item.testimonial}"</span>
             </div>

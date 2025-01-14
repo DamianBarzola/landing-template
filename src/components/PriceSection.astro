@@ -1,0 +1,78 @@
+---
+const CARDS = [
+  {
+    icon: "🎉",
+    title: "Card 1",
+    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    icon: "🎉",
+    title: "Card 2",
+    description:
+      "lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum repellendus vero!",
+  },
+  {
+    icon: "🎉",
+    title: "Card 3",
+    description:
+      "lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum repellendus vero! lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum repellendus vero!",
+  },
+  {
+    icon: "🎉",
+    title: "Card with long long long long description ",
+    description:
+      "lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum repellendus vero! lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum repellendus vero! lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum repellendus vero! lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum repellendus vero!",
+  },
+];
+---
+
+<div class="min-h-screen flex">
+  <div class="mx-4 my-8 md:m-[10%] w-full">
+    <div class="text-center">
+      <h1 class="text-5xl mb-2 font-semibold">Prices Section</h1>
+      <span class="text-lg opacity-65">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat
+        nostrum repellendus vero!
+      </span>
+      <div class="mt-4 mb-10">
+        <button class="w-28">Monthly</button>
+        <button class="w-28">Anual</button>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="card">
+        <div>
+          <h1 class="text-3xl">Free</h1>
+          <p class="opacity-75">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+          <div class="opacity-75 mt-4 flex flex-col gap-1">
+            <p>Some features</p>
+            <p>Some features</p>
+            <p>Some features</p>
+            <p>Some features</p>
+            <p>Some features</p>
+            <p>Some features</p>
+            <p>Some features</p>
+          </div>
+          <div class="mt-4">
+            <button>Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .card {
+    /* background-color: #111111ba; */
+    border: #272727 1px solid;
+    padding: 1.5rem;
+  }
+
+  button {
+    padding: 0.25rem 0.75rem;
+    border: 1px solid white;
+    border-radius: 6px;
+  }
+</style>

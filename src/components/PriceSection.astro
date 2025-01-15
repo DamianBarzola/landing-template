@@ -1,27 +1,42 @@
 ---
-const CARDS = [
+import { map } from "astro:schema";
+
+const PLANS = [
   {
-    icon: "🎉",
-    title: "Card 1",
+    title: "Free",
     description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    price: 0,
+    characteristics: [
+      { icon: "🎉", title: "Feature 1" },
+      { icon: "🎉", title: "Feature 2" },
+      { icon: "🎉", title: "Feature 3" },
+    ],
+    button: "Try for free",
   },
   {
-    icon: "🎉",
-    title: "Card 2",
-    description:
-      "lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum repellendus vero!",
+    title: "Normal",
+    description: "lorem ipsum dolor sit amet consectetur adipisicing elit",
+    price: 100,
+    characteristics: [
+      { icon: "🎉", title: "Feature 1" },
+      { icon: "🎉", title: "Feature 2" },
+      { icon: "🎉", title: "Feature 3" },
+    ],
+    button: "Subscribe",
   },
   {
-    icon: "🎉",
-    title: "Card 3",
-    description:
-      "lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum repellendus vero! lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum repellendus vero!",
-  },
-  {
-    icon: "🎉",
-    title: "Card with long long long long description ",
-    description:
-      "lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum repellendus vero! lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum repellendus vero! lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum repellendus vero! lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum repellendus vero!",
+    title: "Premium",
+    description: "lorem ipsum dolor sit amet consectetur adipisicing elit",
+    price: 200,
+    characteristics: [
+      { icon: "🎉", title: "Feature 1" },
+      { icon: "🎉", title: "Feature 2" },
+      { icon: "🎉", title: "Feature 2" },
+      { icon: "🎉", title: "Feature 2" },
+      { icon: "🎉", title: "Feature 2" },
+      { icon: "🎉", title: "Feature 2" },
+    ],
+    button: "Subscribe",
   },
 ];
 ---
@@ -34,45 +49,77 @@ const CARDS = [
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat
         nostrum repellendus vero!
       </span>
-      <div class="mt-4 mb-10">
-        <button class="w-28">Monthly</button>
-        <button class="w-28">Anual</button>
+      <div class="mt-5 mb-4">
+        <button class="select-button selected w-28">Monthly</button>
+        <button class="select-button w-28">Anual</button>
       </div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-      <div class="card">
-        <div>
-          <h1 class="text-3xl">Free</h1>
-          <p class="opacity-75">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
-          <div class="opacity-75 mt-4 flex flex-col gap-1">
-            <p>Some features</p>
-            <p>Some features</p>
-            <p>Some features</p>
-            <p>Some features</p>
-            <p>Some features</p>
-            <p>Some features</p>
-            <p>Some features</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+      {
+        PLANS.map((plan) => (
+          <div class="card flex flex-col">
+            <h1 class="text-3xl">{plan.title}</h1>
+            <p class="opacity-75">{plan.description}</p>
+
+            <p class=" mt-4">
+              <span class="text-4xl font-semibold">${plan.price}</span>
+              <span>/ month</span>
+            </p>
+            <div class="flex flex-col flex-auto justify-between">
+              <div class="opacity-75 mt-4 flex flex-col gap-2">
+                {plan.characteristics.map((characteristic) => (
+                  <div class="flex items-center gap-2">
+                    <span>{characteristic.icon}</span>
+                    <span>{characteristic.title}</span>
+                  </div>
+                ))}
+              </div>
+              <div class="mt-4 w-full">
+                <button class="subscribe w-full">{plan.button}</button>
+              </div>
+            </div>
           </div>
-          <div class="mt-4">
-            <button>Subscribe</button>
-          </div>
-        </div>
-      </div>
+        ))
+      }
     </div>
   </div>
 </div>
 <style>
   .card {
-    /* background-color: #111111ba; */
+    background-color: #0a0a0a;
     border: #272727 1px solid;
     padding: 1.5rem;
+    border-radius: 4px;
   }
 
-  button {
+  .select-button {
     padding: 0.25rem 0.75rem;
-    border: 1px solid white;
-    border-radius: 6px;
+    border: 1px solid rgb(121, 121, 121);
+    color: rgb(214, 214, 214);
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .select-button:hover {
+    opacity: 0.75;
+  }
+  .selected {
+    background-color: white;
+    color: black;
+  }
+  .subscribe {
+    padding: 0.75rem;
+    transition: all 0.15s ease-in-out;
+    border-radius: 4px;
+    background-color: rgb(12, 12, 12);
+    color: white;
+    font-weight: bold;
+    border: #272727 1px solid;
+  }
+  .subscribe:hover {
+    background-color: white;
+    color: black;
+  }
+  .subscribe:active {
+    background-color: #e4e4e4ba;
   }
 </style>
